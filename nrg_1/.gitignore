@@ -31,3 +31,34 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Maven
+/target
+/logs
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+
+# Other
+*.jar
+*.war
+*.ear
+
+# Temporary files
+*.tmp
+*.swp
+
+# Windows hidden files
+desktop.ini
