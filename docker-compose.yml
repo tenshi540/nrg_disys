@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: energy-com-db
+    environment:
+      POSTGRES_DB: energy-db
+      POSTGRES_USER: energy
+      POSTGRES_PASSWORD: energy
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
