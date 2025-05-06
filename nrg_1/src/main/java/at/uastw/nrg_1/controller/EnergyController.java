@@ -7,9 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 //xD
 
+import at.uastw.nrg_1.repository.UsageStatRepository;
+
+import java.util.List;
+
 @RestController
 @RequestMapping("/energy")
 public class EnergyController {
+
+     private final UsageStatRepository usageStatRepository;
+
+    public EnergyController(UsageStatRepository usageStatRepository) {
+        this.usageStatRepository = usageStatRepository;
+    }
 
     @GetMapping("/current")
     public String getCurrentEnergy() {
@@ -20,4 +30,9 @@ public class EnergyController {
     public String getHistorical(@RequestParam String start, @RequestParam String end) {
         return "Mock Historical Data from " + start + " to " + end;
     }
-}
+
+    @GetMapping("/all")
+    public List<UsageStat> getEnergy() {
+        return usageStatRepository.findAll();
+    }
+    }
