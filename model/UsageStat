@@ -1,0 +1,63 @@
+package at.uastw.nrg_1.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import org.hibernate.annotations.ColumnDefault;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+
+@Entity
+@Table(name = "usage_stats")
+public class UsageStat {
+    @Id
+    @Column(name = "hour", nullable = false)
+    private Instant id;
+
+    @ColumnDefault("0")
+    @Column(name = "community_produced", nullable = false)
+    private BigDecimal communityProduced;
+
+    @ColumnDefault("0")
+    @Column(name = "community_used", nullable = false)
+    private BigDecimal communityUsed;
+
+    @ColumnDefault("0")
+    @Column(name = "grid_used", nullable = false)
+    private BigDecimal gridUsed;
+
+    public Instant getId() {
+        return id;
+    }
+
+    public void setId(Instant id) {
+        this.id = id;
+    }
+
+    public BigDecimal getCommunityProduced() {
+        return communityProduced;
+    }
+
+    public void setCommunityProduced(BigDecimal communityProduced) {
+        this.communityProduced = communityProduced;
+    }
+
+    public BigDecimal getCommunityUsed() {
+        return communityUsed;
+    }
+
+    public void setCommunityUsed(BigDecimal communityUsed) {
+        this.communityUsed = communityUsed;
+    }
+
+    public BigDecimal getGridUsed() {
+        return gridUsed;
+    }
+
+    public void setGridUsed(BigDecimal gridUsed) {
+        this.gridUsed = gridUsed;
+    }
+
+}
