@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Nrg1Application",
+            "request": "launch",
+            "mainClass": "at.uastw.nrg_1.Nrg1Application",
+            "projectName": "nrg_1"
+        },
+        {
+            "type": "java",
+            "name": "Launch EnergyApp",
+            "request": "launch",
+            "mainClass": "at.uastw.nrg_1.gui.EnergyApp",
+            "vmArgs": "--module-path C:/Users/kirru/Documents/nrg_/javafx-sdk-24.0.1/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
